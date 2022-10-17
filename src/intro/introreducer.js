@@ -1,0 +1,41 @@
+import React from 'react'
+
+const initialState = [{
+  id: 1,
+  todo: 'hacer los challenges',
+  done: false
+}]
+
+const  todoReducer = (state = initialState, action = {} ) => {
+  if ( action.type === '[TODO] add todo' ){
+    return [ ...state, action.payload]
+  }
+
+  return state;
+}
+
+let todos = todoReducer();
+
+const newTodo = {
+  id: 2,
+  todo: 'Avance del Proyecto',
+  done: false
+}
+
+const addTodoAction = {
+  type: '[TODO] add todo',
+  payload: newTodo,
+}
+
+todos = todoReducer( todos, addTodoAction)
+
+cosnsole.log( todos );
+
+
+export const introreducer = () => {
+  return (
+    <div>
+
+    </div>
+  )
+}
